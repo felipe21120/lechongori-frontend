@@ -21,7 +21,7 @@ export const initialData: SeedData = {
         {
             description: "Lechona",
             images: [
-                'lechona.jpg',
+                'oficial-lechona.jpg',
             ],
             slug: "lechona-lechongori",
             price: 100,
@@ -32,7 +32,7 @@ export const initialData: SeedData = {
         {
             description: "tamal",
             images: [
-                'tamal.jpeg',
+                'oficial-lechona.jpg',
             ],
             slug: "tamal-lechongori",
             price: 100,
@@ -43,7 +43,7 @@ export const initialData: SeedData = {
         {
             description: "Carne a la llanera",
             images: [
-                'carne.jpeg',
+                'oficial-lechona.jpg',
             ],
             slug: "carne-lechongori",
             price: 100,
@@ -54,7 +54,7 @@ export const initialData: SeedData = {
         {
             description: "arroz",
             images: [
-                'arroz.jpg',
+                'oficial-lechona.jpg',
             ],
             slug: "arroz-lechongori",
             price: 100,
@@ -65,7 +65,7 @@ export const initialData: SeedData = {
         {
             description: "Lechona",
             images: [
-                'lechona.jpg',
+                'oficial-lechona.jpg',
             ],
             slug: "lechona-lechongori",
             price: 100,
@@ -76,7 +76,7 @@ export const initialData: SeedData = {
         {
             description: "Lechona",
             images: [
-                'lechona.jpg',
+                'oficial-lechona.jpg',
             ],
             slug: "lechona-lechongori",
             price: 100,

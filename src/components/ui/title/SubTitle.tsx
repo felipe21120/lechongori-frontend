@@ -1,18 +1,26 @@
 
 
-export const SubTitle = () => {
+interface Props {
+  subtitle?: string;
+  subtitle2?: string
+  classname?: string;
+}
+
+
+
+export const SubTitle = ( {subtitle, subtitle2, classname}:Props ) => {
     return (
-        <div className="flex items-center justify-center">
-          <div className="text-center">
-            <h2 className='text-lg font-semibold' >
+        <div className={ ` ${classname} `} >
+            <h2>
               <span className='block mb-2'>
-                Cada bocado es una celebración de la rica herencia culinaria de Tolima, preparado con amor y dedicación.
+                {subtitle}
               </span>
-              <span className='block text-red-500'>
-                ¡Ven y disfruta de una experiencia gastronómica única en Lechongori!
+
+              <span className='block text-red-500 text-2xl'>
+                {subtitle2}
               </span>
+              
             </h2>
-          </div>
         </div>
       );
 }

@@ -1,24 +1,24 @@
-import { Carrousel, TopMenu } from "@/components";
+import { Carrousel, ModelBar, TopMenu } from "@/components";
 
 export default function LechonaLayout({
- children
+  children
 }: {
- children: React.ReactNode;
+  children: React.ReactNode;
 }) {
   return (
     <main>
-      <div className="mb-20 mt-3">
+      <div className="mb-16 mt-3">
         <TopMenu />
       </div>
 
+      <ModelBar />
 
-      <Carrousel />
-
-
-      <div className="px-0 sm:px-40 mt-20">
+      <div className="px-0 sm:px-0 md:px-0 lg:px-40">
         {children}
       </div>
-        
+
+
+
     </main>
   );
 }

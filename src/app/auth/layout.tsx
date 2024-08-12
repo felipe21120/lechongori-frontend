@@ -5,8 +5,10 @@ export default function LechonaLayout({
  children: React.ReactNode;
 }) {
   return (
-    <main>
-      {children}
+    <main >
+ 
+        {children}
+
     </main>
   );
 }

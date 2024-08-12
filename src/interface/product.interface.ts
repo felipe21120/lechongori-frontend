@@ -8,3 +8,4 @@ export interface Product {
 }
 
 export type ValidTypes = 'lechona'|'tamal'|'empanadas'|'carne'|'sancocho'|'costillas';
+ 
