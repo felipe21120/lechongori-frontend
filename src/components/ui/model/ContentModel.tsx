@@ -48,22 +48,22 @@ export const ContentModel: React.FC = () => {
 
             
             {productsInCart.map(product => (
-              <div key={product.slug} className="flex mb-5">
+              <div key={product.productSlug} className="flex mb-5">
                 <Image
-                  src={`/images/${product.images[0]}`}
+                  src={`/images/${product.productImages[0]}`}
                   width={100}
                   height={100}
                   layout="fixed"
                   objectFit="cover"
-                  alt={product.title}
+                  alt={product.productTitle}
                   className="mr-5 rounded"
                 />
 
                 <div className="flex flex-col justify-between items-start w-full">
                   <div className="flex justify-between items-center w-full">
                     <div className='py-2 pr-8'>
-                      <p>{product.title}</p>
-                      <p>${product.price}</p>
+                      <p>{product.productTitle}</p>
+                      <p>${product.productPrice}</p>
                     </div>
                     <QuantitySelector quantity={3} />
                   </div>

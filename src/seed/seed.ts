@@ -1,10 +1,10 @@
 interface SeedProduct {
-    description: string;
-    images: string[];
-    slug: string;
-    title: string;
-    price: number;
-    type: ValidTypes;
+    productDescription: string;
+    productImages: string[];
+    productSlug: string;
+    productTitle: string;
+    productPrice: number;
+    productType: ValidTypes;
 }
 
 type ValidTypes = 'lechona'|'tamal'|'empanadas'|'carne'|'sancocho'|'costillas';
@@ -19,69 +19,69 @@ interface SeedData {
 export const initialData: SeedData = {
     products: [
         {
-            description: "Lechona",
-            images: [
+            productDescription: "Lechona",
+            productImages: [
                 'oficial-lechona.jpg',
             ],
-            slug: "lechona-lechongori",
-            price: 100,
-            type: 'lechona',
-            title: "Lechona",
+            productSlug: "lechona-lechongori",
+            productPrice: 100,
+            productType: 'lechona',
+            productTitle: "Lechona",
         },
 
         {
-            description: "tamal",
-            images: [
+            productDescription: "tamal",
+            productImages: [
                 'oficial-lechona.jpg',
             ],
-            slug: "tamal-lechongori",
-            price: 100,
-            type: 'tamal',
-            title: "Tamal",
+            productSlug: "tamal-lechongori",
+            productPrice: 100,
+            productType: 'tamal',
+            productTitle: "Tamal",
         },
 
         {
-            description: "Carne a la llanera",
-            images: [
+            productDescription: "Carne a la llanera",
+            productImages: [
                 'oficial-lechona.jpg',
             ],
-            slug: "carne-lechongori",
-            price: 100,
-            type: 'carne',
-            title: "Carne",
+            productSlug: "carne-lechongori",
+            productPrice: 100,
+            productType: 'carne',
+            productTitle: "Carne",
         },
 
         {
-            description: "arroz",
-            images: [
+            productDescription: "arroz",
+            productImages: [
                 'oficial-lechona.jpg',
             ],
-            slug: "arroz-lechongori",
-            price: 100,
-            type: 'empanadas',
-            title: "Arroz",
+            productSlug: "arroz-lechongori",
+            productPrice: 100,
+            productType: 'empanadas',
+            productTitle: "Arroz",
         },
 
         {
-            description: "Lechona",
-            images: [
+            productDescription: "Lechona",
+            productImages: [
                 'oficial-lechona.jpg',
             ],
-            slug: "lechona-lechongori",
-            price: 100,
-            type: 'sancocho',
-            title: "Lechona",
+            productSlug: "lechona-lechongori",
+            productPrice: 100,
+            productType: 'sancocho',
+            productTitle: "Lechona",
         },
 
         {
-            description: "Lechona",
-            images: [
+            productDescription: "Lechona",
+            productImages: [
                 'oficial-lechona.jpg',
             ],
-            slug: "lechona-lechongori",
-            price: 100,
-            type: 'costillas',
-            title: "Lechona",
+            productSlug: "lechona-lechongori",
+            productPrice: 100,
+            productType: 'costillas',
+            productTitle: "Lechona",
         },
 
     ]

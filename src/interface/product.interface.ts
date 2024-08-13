@@ -1,10 +1,10 @@
 export interface Product {
-    description: string;
-    images: string[];
-    slug: string;
-    title: string;
-    price: number;
-    type: ValidTypes;
+    productDescription: string;
+    productImages: string[];
+    productSlug: string;
+    productTitle: string;
+    productPrice: number;
+    productType: ValidTypes;
 }
 
 export type ValidTypes = 'lechona'|'tamal'|'empanadas'|'carne'|'sancocho'|'costillas';

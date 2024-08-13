@@ -17,6 +17,8 @@ const ProductGridContainer = () => {
       try {
         const data = await fetchProducts();
         setProducts(data);
+        console.log(Array.isArray(data)); // Verifica si data es un arreglo
+      console.log(data); // Muestra el contenido de data
       } catch (error) {
         setError("Failed to load products.");
       } finally {
