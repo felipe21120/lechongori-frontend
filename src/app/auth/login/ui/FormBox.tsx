@@ -3,28 +3,29 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
-  email: string;
-  contraseña: string;
+  userEmail: string;
+  userPassword: string;
 };
 
 export const FormBox: React.FC = () => {
   const { register, handleSubmit, formState: { errors, isSubmitting }, setError, reset } = useForm<Inputs>({
     defaultValues: {
-      email: "",
-      contraseña: ""
+      userEmail: "",
+      userPassword: ""
     }
   });
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
-      const response = await fetch("pages/api/login.ts", {  
+      const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+      const response = await fetch(`${apiUrl}/usuario/servicio-usuario`, {  
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username: data.email,
-          password: data.contraseña,
+          userEmail: data.userEmail,
+          userPassword: data.userPassword,
         }),
       });
 
@@ -35,6 +36,7 @@ export const FormBox: React.FC = () => {
 
       const successData = await response.json();
       alert(successData.success);
+      console.log(successData)
       reset();
 
     } catch (error: any) {
@@ -52,7 +54,7 @@ export const FormBox: React.FC = () => {
         </label>
         <input
           type="text"
-          {...register("email", {
+          {...register("userEmail", {
             required: {
               value: true,
               message: "Correo invalido"
@@ -61,7 +63,7 @@ export const FormBox: React.FC = () => {
           className="shadow appearance-none border border-gray-500 rounded-2xl w-full py-3 px-5 text-gray-700 placeholder:text-xs font-light leading-tight focus:outline-none focus:shadow-outline"
           placeholder="Escribe tu correo de administrador"
         />
-        <p className="font-light text-sm text-red-500">{errors.email?.message}</p>
+        <p className="font-light text-sm text-red-500">{errors.userEmail?.message}</p>
       </div>
 
       <div className="mb-6">
@@ -70,7 +72,7 @@ export const FormBox: React.FC = () => {
         </label>
         <input
           type="password"
-          {...register("contraseña", {
+          {...register("userPassword", {
             required: {
               value: true,
               message: "Contraseña invalida"
@@ -79,7 +81,7 @@ export const FormBox: React.FC = () => {
           className="shadow appearance-none border border-gray-500 rounded-2xl w-full py-3 px-5 text-gray-700 placeholder:text-xs font-light leading-tight focus:outline-none focus:shadow-outline"
           placeholder="**********"
         />
-        <p className="font-light text-sm text-red-500">{errors.contraseña?.message}</p>
+        <p className="font-light text-sm text-red-500">{errors.userPassword?.message}</p>
       </div>
 
       {errors.root && <p className="font-light text-sm text-red-500">{errors.root.message}</p>}
