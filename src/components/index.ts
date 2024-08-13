@@ -1,5 +1,3 @@
-
-
 export * from './ui/top-menu/TopMenu'
 export * from './ui/top-menu/AdminMenu'
 export * from './ui/not-found/PageNotFound'
@@ -18,3 +16,5 @@ export * from './ui/model/ContentModel'
 export * from './ui/date-form/DateForm'
 
 export * from './product/quanquity-selector/QuantitySelector'
+
+export * from './products/product-grid-container/ProducGridContainer'

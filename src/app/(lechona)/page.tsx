@@ -1,5 +1,10 @@
+// export const revalidate = 60
+
+
 import { Carrousel, Footer, ImageLogo, ScrollWithWhatsApp, SubTitle, Title } from "@/components";
+import ProductGridContainer from "@/components/products/product-grid-container/ProducGridContainer";
 import { ProductGrid } from "@/components/products/product-grid/ProductGrid";
+
 import { specialTitle } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 
@@ -56,9 +61,9 @@ export default function Home() {
           title="Conoce algunos de nuestros productos"
           className="text-2xl md:text-3xl text-center font-bold mb-12 md:mb-16"
         />
-        <ProductGrid
-          products={products}
-        />
+        
+        <ProductGridContainer />
+
         <SubTitle
           subtitle="Saber más sobre nuestros productos especiales"
           classname={`${specialTitle.className} text-xl md:text-2xl font-bold text-center text-red-500 mt-8 md:mt-10 mb-16 md:mb-28`}
