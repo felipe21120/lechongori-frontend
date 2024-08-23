@@ -52,7 +52,7 @@ export const useCartStore = create<State>()(
       addProductTocart: (product: CartProduct) => {
         const { cart } = get();
 
-        // 1. Revisar si el producto existe en el carrito con la talla seleccionada
+
         const productInCart = cart.some(
           (item) => item.id === product.id
         );
@@ -62,7 +62,6 @@ export const useCartStore = create<State>()(
           return;
         }
 
-        // 2. Se que el producto existe por talla... tengo que incrementar
         const updatedCartProducts = cart.map((item) => {
           if (item.id === product.id ) {
             return { ...item, quantity: item.productQuantity + product.productQuantity };

@@ -15,10 +15,6 @@ export default async function Home() {
   const { products } = await getPaginatedProductsWithImages();
 
 
-  console.log(products)
-
-
-
   return (
     <>
       <div className="mb-4 px-4 sm:px-6 lg:px-8">

@@ -24,7 +24,7 @@ export const ProductCotizacion = () => {
     <>
       {productsInCart.map(product => (
         <div
-          key={`${product.productSlug}-${product.sizes}`}
+          key={`${product.productSlug}`}
           className="flex flex-col sm:flex-row mb-5 p-4 rounded-lg shadow-2xl w-full"
         >
           <div className="flex justify-center sm:justify-start mb-4 sm:mb-0">

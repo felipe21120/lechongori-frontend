@@ -26,9 +26,6 @@ export * from './ui/scroll/Scroll'
 export * from './ui/scroll/scroll-whatsapp/ScrollWhatsapp'
 
 
-export * from './ui/model/ModelBar'
-
-
 export * from './ui/date-form/DateForm'
 
 

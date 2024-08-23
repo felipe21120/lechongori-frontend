@@ -1,29 +1,23 @@
 'use client'
 
-
-import type { CartProduct, Product, Size } from '@/interface'
+import type { CartProduct, Product } from '@/interface';
 import { useCartStore } from '@/store';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { QuantitySelectorInput } from '@/components/product/quanquity-selector/QuantitySelectorInput';
 import Link from 'next/link';
-
 
 interface Props {
   product: Product | null;
 }
 
 export const AddProducts: React.FC<Props> = ({ product }) => {
-  if (!product) {
-    return <div>No hay productos</div>;
-  }
-
   const addProductToCart = useCartStore(state => state.addProductTocart);
-
 
   const [quantity, setQuantity] = useState<number>(1);
   const [posted, setPosted] = useState(false);
 
   const addToCart = () => {
+    if (!product) return;
 
     setPosted(true);
 
@@ -33,22 +27,21 @@ export const AddProducts: React.FC<Props> = ({ product }) => {
       productTitle: product.productTitle,
       productPrice: product.productPrice,
       productQuantity: quantity,
-      productImage: product.ProductImage[0]
-    }
-
+      productImage: product.ProductImage[0],
+    };
 
     addProductToCart(cartProduct);
     setPosted(false);
     setQuantity(1);
+  };
 
+  if (!product) {
+    return <div>No hay productos</div>;
   }
 
   return (
     <>
-
-
       <div className="grid grid-cols-1 my-10">
-
         <QuantitySelectorInput
           quantity={quantity}
           onQuantityChanged={setQuantity}
@@ -60,7 +53,6 @@ export const AddProducts: React.FC<Props> = ({ product }) => {
         {product.productDescription}
       </p>
 
-
       <div className="flex justify-center items-center mt-16">
         <Link href="/pre-cotizacion">
           <button
@@ -70,18 +62,15 @@ export const AddProducts: React.FC<Props> = ({ product }) => {
             Agregar cotización
           </button>
         </Link>
-
       </div>
 
       <div className="flex justify-center items-end mt-4">
-  <Link href="/pre-cotizacion">
-    <p className="underline text-sm transition duration-300 ease-in-out transform hover:text-red-500 hover:scale-105">
-      Volver al inicio
-    </p>
-  </Link>
-</div>
-
+        <Link href="/pre-cotizacion">
+          <p className="underline text-sm transition duration-300 ease-in-out transform hover:text-red-500 hover:scale-105">
+            Volver al inicio
+          </p>
+        </Link>
+      </div>
     </>
-
-  )
-}
+  );
+};

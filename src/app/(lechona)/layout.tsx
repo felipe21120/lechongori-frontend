@@ -1,4 +1,4 @@
-import {  ModelBar, TopMenu } from "@/components";
+import {  TopMenu } from "@/components";
 
 export default function LechonaLayout({
   children
@@ -11,7 +11,6 @@ export default function LechonaLayout({
         <TopMenu />
       </div>
 
-      <ModelBar />
 
       <div className="px-0 sm:px-0 md:px-0 lg:px-40">
         {children}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 
 type IconComponentProps = {
@@ -11,7 +12,7 @@ type IconComponentProps = {
 export const IconComponent: React.FC<IconComponentProps> = ({ iconName, altText, width , height, classname  }) => {
   return (
     <div className={ ` ${classname} `}>
-      <img 
+      <Image 
       src={`/icons/${iconName}.png`} 
       alt={altText} 
       width={width} 
