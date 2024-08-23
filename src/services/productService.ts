@@ -5,8 +5,10 @@ const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 export const fetchProducts = async (): Promise<Product[]> => {
   try {
     const response = await fetch(`${API_URL}/product/read-products`);
+    const response = await fetch(`${API_URL}/product/read-products`);
 
     if (!response.ok) {
+      throw new Error(`Error al obtener los productos: ${response.status}`);
       throw new Error(`Error al obtener los productos: ${response.status}`);
     }
 
