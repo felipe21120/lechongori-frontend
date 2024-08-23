@@ -6,11 +6,7 @@ export interface Product {
   productSlug: string;
   productTitle: string;
   productPrice: number;
-  sizes: Size[];
 }
-
-
-export type Size = 'lechona' | 'tamal' | 'tamal_lechona' | 'carne' | 'sancocho' | 'costillas'
 
 
 
@@ -21,7 +17,6 @@ export interface CartProduct {
   productTitle: string;
   productPrice: number;
   productQuantity: number;
-  sizes: Size;
   productImage: string;
 }
 

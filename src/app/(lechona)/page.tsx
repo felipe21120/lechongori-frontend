@@ -71,9 +71,14 @@ export default async function Home() {
 
         <ProductGridCopy products={products} />
 
-        {/** <ProductGridContainer />*/}
+        {/** 
+         *  CONEXION CON EL BACKEND
+         * <ProductGridContainer />*/}
 
-        <p className="text-center mt-10 font-light text-gray-600">Si deseas saber el precio de nuestros productos da click aqui</p>
+        <Link href="/pre-cotizacion">
+        <p className="text-center mt-10 font-normal hover:underline text-red-500 cursor-pointer">Si deseas saber el precio de nuestros productos da click aqui <span className="block font-medium text-xl">↓</span></p>
+        </Link>
+       
 
         <div className="flex justify-center mt-6">
           <Link href={"/pre-cotizacion"}>
@@ -83,11 +88,6 @@ export default async function Home() {
           </Link>
           
         </div>
-
-        {/** <SubTitle
-          subtitle="Saber más sobre nuestros productos especiales"
-          classname={`${specialTitle.className} text-xl md:text-2xl font-bold text-center text-red-500 mt-8 md:mt-10 mb-16 md:mb-28`}
-        /> */}
 
         
       </div>

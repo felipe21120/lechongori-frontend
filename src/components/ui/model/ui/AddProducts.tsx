@@ -1,26 +1,25 @@
 'use client'
 
-import { SizeSelector } from '@/components/product/size-selector/SizeSelector'
+
 import type { CartProduct, Product, Size } from '@/interface'
 import { useCartStore } from '@/store';
 import React, { useState } from 'react'
-import { QuantitySelector } from '@/components/product/quanquity-selector/QuantitySelector';
 import { QuantitySelectorInput } from '@/components/product/quanquity-selector/QuantitySelectorInput';
+import Link from 'next/link';
 
 
 interface Props {
-  product: Product | null; 
+  product: Product | null;
 }
 
 export const AddProducts: React.FC<Props> = ({ product }) => {
   if (!product) {
-    return <div>No hay productos</div>; 
+    return <div>No hay productos</div>;
   }
 
   const addProductToCart = useCartStore(state => state.addProductTocart);
 
 
-  const [sizes, setSizes] = useState<Size | undefined>();
   const [quantity, setQuantity] = useState<number>(1);
   const [posted, setPosted] = useState(false);
 
@@ -28,15 +27,12 @@ export const AddProducts: React.FC<Props> = ({ product }) => {
 
     setPosted(true);
 
-    if (!sizes) return;
-
     const cartProduct: CartProduct = {
       id: product.id,
       productSlug: product.productSlug,
       productTitle: product.productTitle,
       productPrice: product.productPrice,
       productQuantity: quantity,
-      sizes: sizes,
       productImage: product.ProductImage[0]
     }
 
@@ -44,53 +40,48 @@ export const AddProducts: React.FC<Props> = ({ product }) => {
     addProductToCart(cartProduct);
     setPosted(false);
     setQuantity(1);
-    setSizes(undefined);
-
 
   }
-
-
 
   return (
     <>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 my-10">
-    {posted && !sizes && (
-      <span className="mt-2 text-red-500 fade-in col-span-2">
-        Debe de seleccionar un producto para hacer una cotización
-      </span>
-    )}
 
+      <div className="grid grid-cols-1 my-10">
 
-    <SizeSelector
-      selectedSize={sizes}
-      availableSizes={product.sizes}
-      onSizeChanged={setSizes}
-    />
+        <QuantitySelectorInput
+          quantity={quantity}
+          onQuantityChanged={setQuantity}
+        />
+      </div>
 
-
-    <QuantitySelectorInput
-      quantity={quantity}
-      onQuantityChanged={setQuantity}
-    />
-  </div>
-
-  {/* Descripción */ }
       <h3 className="font-semibold mb-4">Descripción</h3>
-        <p className="font-light text-sm text-gray-700">
-          { product.productDescription }
-        </p>
+      <p className="font-light text-sm text-gray-700">
+        {product.productDescription}
+      </p>
 
 
-  <div className="flex justify-center items-center mt-16">
-    <button
-      onClick={addToCart}
-      className="flex bg-red-500 py-2 px-10 rounded-3xl text-white transition-transform transform hover:scale-105 focus:scale-95"
-    >
-      Agregar al carrito
-    </button>
-  </div>
-</>
+      <div className="flex justify-center items-center mt-16">
+        <Link href="/pre-cotizacion">
+          <button
+            onClick={addToCart}
+            className="flex bg-red-500 py-2 px-10 rounded-3xl text-white transition-transform transform hover:scale-105 focus:scale-95"
+          >
+            Agregar cotización
+          </button>
+        </Link>
+
+      </div>
+
+      <div className="flex justify-center items-end mt-4">
+  <Link href="/pre-cotizacion">
+    <p className="underline text-sm transition duration-300 ease-in-out transform hover:text-red-500 hover:scale-105">
+      Volver al inicio
+    </p>
+  </Link>
+</div>
+
+    </>
 
   )
 }

@@ -16,8 +16,9 @@ export const QuantitySelectorInput = ({ quantity, onQuantityChanged }: Props) =>
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
-        <h3 className='text font-semibold mb-4'>Cantidad</h3>
+    <div className="flex flex-col ">
+        <h3 className='font-semibold'>Cantidad</h3>
+        <p className="text-sm font-light my-2">Selecciona la cantidad que deseas cotizar</p>
       <input
         type="number"
         className="w-20 h-10 border rounded-full focus:outline-none text-center font-light "

@@ -54,7 +54,7 @@ export const useCartStore = create<State>()(
 
         // 1. Revisar si el producto existe en el carrito con la talla seleccionada
         const productInCart = cart.some(
-          (item) => item.id === product.id && item.sizes === product.sizes
+          (item) => item.id === product.id
         );
 
         if (!productInCart) {
@@ -64,7 +64,7 @@ export const useCartStore = create<State>()(
 
         // 2. Se que el producto existe por talla... tengo que incrementar
         const updatedCartProducts = cart.map((item) => {
-          if (item.id === product.id && item.sizes === product.sizes) {
+          if (item.id === product.id ) {
             return { ...item, quantity: item.productQuantity + product.productQuantity };
           }
 
@@ -78,7 +78,7 @@ export const useCartStore = create<State>()(
         const { cart } = get();
 
         const updatedCartProducts = cart.map((item) => {
-          if (item.productSlug === product.productSlug && item.sizes === product.sizes) {
+          if (item.productSlug === product.productSlug ) {
             return { ...item, productQuantity: productQuantity  };
           }
           return item;
@@ -90,7 +90,7 @@ export const useCartStore = create<State>()(
       removeProduct: (product: CartProduct) => {
         const { cart } = get();
         const updatedCartProducts = cart.filter(
-          (item) => item.productSlug !== product.productSlug || item.sizes !== product.sizes
+          (item) => item.productSlug !== product.productSlug
         );
 
         set({ cart: updatedCartProducts });
