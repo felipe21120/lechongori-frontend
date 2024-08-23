@@ -1,11 +1,30 @@
+
 export interface Product {
-    description: string;
-    images: string[];
-    slug: string;
-    title: string;
-    price: number;
-    type: ValidTypes;
+  id: string
+  productDescription: string;
+  ProductImage: string[];
+  productSlug: string;
+  productTitle: string;
+  productPrice: number;
+  sizes: Size[];
 }
 
-export type ValidTypes = 'lechona'|'tamal'|'empanadas'|'carne'|'sancocho'|'costillas';
- 
+
+export type Size = 'lechona' | 'tamal' | 'tamal_lechona' | 'carne' | 'sancocho' | 'costillas'
+
+
+
+
+export interface CartProduct {
+  id: string
+  productSlug: string;
+  productTitle: string;
+  productPrice: number;
+  productQuantity: number;
+  sizes: Size;
+  productImage: string;
+}
+
+
+
+export type ValidTypes = 'lechona'|'tamal'|'tamal_lechona'|'carne'|'sancocho'|'costillas';

@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import { IoCloseOutline } from 'react-icons/io5';
 import { useUIStore } from '@/store';
-import { ContentModel } from './ContentModel';
+
 
 export const ModelBar: React.FC = () => {
 
@@ -44,7 +44,6 @@ export const ModelBar: React.FC = () => {
         />
 
         <div className="mt-10">
-          <ContentModel />
         </div>
       </nav>
     </div>

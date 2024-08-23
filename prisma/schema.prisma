@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Size {
+  lechona
+  tamal
+  tamal_lechona
+  carne
+  sancocho
+  costillas
+}
+
+model Category {
+  id      String    @id @default(uuid())
+  name    String    @unique
+  Product Product[]
+}
+
+model Product {
+  id                 String @id @default(uuid())
+  productTitle       String
+  productDescription String
+  productPrice       Float  @default(0)
+  sizes              Size[] @default([])
+  productSlug        String @unique
+
+  // Relaciones
+
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId String
+
+  ProductImage ProductImage[]
+}
+
+model ProductImage {
+  id  Int    @id @default(autoincrement())
+  url String
+
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+}

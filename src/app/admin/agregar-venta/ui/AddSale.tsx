@@ -43,24 +43,24 @@ export const AddSale: React.FC = () => {
 
 
             {productsInCart.map(product => (
-              <div key={product.slug} className="flex mb-4 md:mb-6">
+              <div key={product.productSlug} className="flex mb-4 md:mb-6">
                 <Image
-                  src={`/images/${product.images[0]}`}
+                  src={`/images/${product.productImage[0]}`}
                   width={60}
                   height={60}
                   layout="fixed"
                   objectFit="cover"
-                  alt={product.title}
+                  alt={product.productTitle}
                   className="mr-3 md:mr-4 rounded"
                 />
 
                 <div className="flex flex-col justify-between items-start w-full">
                   <div className="flex justify-between items-center w-full">
                     <div className='py-1 pr-2 md:pr-4'>
-                      <p className="text-sm md:text-base">{product.title}</p>
-                      <p className="text-sm md:text-base">${product.price}</p>
+                      <p className="text-sm md:text-base">{product.productTitle}</p>
+                      <p className="text-sm md:text-base">${product.productPrice}</p>
                     </div>
-                    <QuantitySelector quantity={3} />
+                    <QuantitySelector quantity={3} onQuantityChanged={console.log}/>
                   </div>
                 </div>
               </div>

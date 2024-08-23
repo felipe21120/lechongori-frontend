@@ -1,7 +1,7 @@
 'use client';
 
 import { titleFont } from '@/config/fonts';
-import { useUIStore } from '@/store';
+import {  useUIStore } from '@/store';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -62,11 +62,11 @@ export const TopMenu = () => {
                     Productos
                 </Link>
                 <span>|</span>
-                <button onClick={openSideMenu}
+                <Link href="/pre-cotizacion"
                     className="m-2 p-2 mr-6 rounded-md transition-all hover:bg-gray-100 font-light text-sm md:text-base lg:text-base"
                 >
                     Cotizaciones
-                </button>
+                </Link>
                 <Link href="/auth/login">
                     <button
                         className="m-3 px-5 py-1 rounded-2xl transition-all bg-red-500 text-white font-light text-sm md:text-base lg:text-base">

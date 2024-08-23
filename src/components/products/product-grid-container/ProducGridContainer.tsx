@@ -17,12 +17,14 @@ const ProductGridContainer = () => {
       try {
         const data = await fetchProducts();
         setProducts(data);
+        console.log(Array.isArray(data)); 
+        console.log(data); 
       } catch (error) {
-        setError("Failed to load products.");
+        setError("No se pudieron obtener los productos");
       } finally {
         setLoading(false);
       }
-    };
+    }; 
 
     loadProducts();
   }, []);

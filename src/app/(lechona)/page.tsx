@@ -1,16 +1,24 @@
-// export const revalidate = 60
 
-
+import { getPaginatedProductsWithImages } from "@/actions";
 import { Carrousel, Footer, ImageLogo, ScrollWithWhatsApp, SubTitle, Title } from "@/components";
-import ProductGridContainer from "@/components/products/product-grid-container/ProducGridContainer";
-import { ProductGrid } from "@/components/products/product-grid/ProductGrid";
+import { ProductGridCopy } from "@/components/products/product-grid/copy/ProductGridCopy";
+
 
 import { specialTitle } from "@/config/fonts";
-import { initialData } from "@/seed/seed";
+import Link from "next/link";
 
-const products = initialData.products;
 
-export default function Home() {
+
+
+export default async function Home() {
+
+  const { products } = await getPaginatedProductsWithImages();
+
+
+  console.log(products)
+
+
+
   return (
     <>
       <div className="mb-4 px-4 sm:px-6 lg:px-8">
@@ -55,27 +63,42 @@ export default function Home() {
         />
       </div>
 
-
       <div id="product-section" className="px-4 sm:px-6 lg:px-8">
         <Title
           title="Conoce algunos de nuestros productos"
           className="text-2xl md:text-3xl text-center font-bold mb-12 md:mb-16"
         />
-        
-        <ProductGridContainer />
 
-        <SubTitle
+        <ProductGridCopy products={products} />
+
+        {/** <ProductGridContainer />*/}
+
+        <p className="text-center mt-10 font-light text-gray-600">Si deseas saber el precio de nuestros productos da click aqui</p>
+
+        <div className="flex justify-center mt-6">
+          <Link href={"/pre-cotizacion"}>
+          <button className="bg-red-500 text-white py-2 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300">
+            Ir a la cotización
+          </button>
+          </Link>
+          
+        </div>
+
+        {/** <SubTitle
           subtitle="Saber más sobre nuestros productos especiales"
           classname={`${specialTitle.className} text-xl md:text-2xl font-bold text-center text-red-500 mt-8 md:mt-10 mb-16 md:mb-28`}
-        />
+        /> */}
+
+        
       </div>
+
 
       <Footer />
 
       <ScrollWithWhatsApp
-        className="custom-class" 
-        phoneNumber="573007277299" 
-        message="Hola, como estas" 
+        className="custom-class"
+        phoneNumber="573007277299"
+        message="Hola, como estas"
       />
     </>
   );

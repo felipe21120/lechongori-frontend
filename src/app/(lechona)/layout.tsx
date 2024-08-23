@@ -1,4 +1,4 @@
-import { Carrousel, ModelBar, TopMenu } from "@/components";
+import {  ModelBar, TopMenu } from "@/components";
 
 export default function LechonaLayout({
   children

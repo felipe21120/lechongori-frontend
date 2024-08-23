@@ -1,4 +1,4 @@
-import { Gupter, Inter, Montserrat_Alternates, Roboto, } from 'next/font/google';
+import { Gupter, Montserrat_Alternates, Roboto, } from 'next/font/google';
 
 
 

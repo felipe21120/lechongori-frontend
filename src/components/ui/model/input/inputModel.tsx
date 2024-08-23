@@ -5,9 +5,8 @@ import React, { useState, useCallback } from 'react';
 interface ProductSelectorProps {
   options: string[];
   onSelect: (value: string) => void;
-  title: string;
-  subtitle: string
-  
+  title?: string;
+  subtitle?: string
 }
 
 
