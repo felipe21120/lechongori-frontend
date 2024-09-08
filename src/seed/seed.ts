@@ -5,11 +5,11 @@ interface SeedProduct {
     productTitle: string;
     productPrice: number;
     type: ValidTypes;
-    sizes: ValidSizes[];
+
 }
 
 type ValidTypes = 'lechona' | 'tamal' | 'tamal_lechona' | 'carne' | 'sancocho' | 'costillas';
-type ValidSizes = 'lechona' | 'tamal' | 'tamal_lechona' | 'carne' | 'sancocho' | 'costillas';
+
 
 interface SeedData {
     categories: string[];
@@ -32,7 +32,6 @@ export const initialData: SeedData = {
             productImage: [
                 'oficial-lechona.jpg',
             ],
-            sizes: ['lechona', 'tamal', 'tamal_lechona', 'carne', 'sancocho', 'costillas'],
             productSlug: "lechona-tolimense-lechongori-ibague",
             productPrice: 12.000,
             type: 'lechona',
@@ -44,7 +43,6 @@ export const initialData: SeedData = {
             productImage: [
                 'tamal-lechongori.jpg',
             ],
-            sizes: ['lechona', 'tamal', 'tamal_lechona', 'carne', 'sancocho', 'costillas'],
             productSlug: "tamal-tolimense-lechongori-ibague",
             productPrice: 10.000,
             type: 'tamal',
@@ -56,7 +54,6 @@ export const initialData: SeedData = {
             productImage: [
                 'carne-llanera-lechongori.jpg',
             ],
-            sizes: ['lechona', 'tamal', 'tamal_lechona', 'carne', 'sancocho', 'costillas'],
             productSlug: "carne-tolimense-lechongori-ibague",
             productPrice: 14.000,
             type: 'carne',
@@ -68,7 +65,6 @@ export const initialData: SeedData = {
             productImage: [
                 'tamal-lechona-lechongori.jpg',
             ],
-            sizes: ['lechona', 'tamal', 'tamal_lechona', 'carne', 'sancocho', 'costillas'],
             productSlug: "tamalconlechona-tolimense-lechongori-ibague",
             productPrice: 12.000,
             type: 'tamal_lechona',
@@ -80,7 +76,6 @@ export const initialData: SeedData = {
             productImage: [
                 'sancocho-lechongori.jpg',
             ],
-            sizes: ['lechona', 'tamal', 'tamal_lechona', 'carne', 'sancocho', 'costillas'],
             productSlug: "sancocho-tolimense-lechongori-ibague",
             productPrice: 12.000,
             type: 'sancocho',
@@ -92,7 +87,6 @@ export const initialData: SeedData = {
             productImage: [
                 'costillas-bbq-lechongori.jpg',
             ],
-            sizes: ['lechona', 'tamal', 'tamal_lechona', 'carne', 'sancocho', 'costillas'],
             productSlug: "costillasbbq-tolimense-lechongori-ibague",
             productPrice: 15.000,
             type: 'costillas',
